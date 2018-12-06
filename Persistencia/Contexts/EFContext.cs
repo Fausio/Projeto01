@@ -12,7 +12,12 @@ namespace Persistencia.Contexts
     {
         public DbSet<Fabricante> fabricantes { get; set; }
         public DbSet<Categoria> categorias { get; set; }
-
         public DbSet<Produto> Produtos { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); /*nessa linha ilimuno a plurralizacao nos nomes das tabelas*/
+        }
     }
 }
