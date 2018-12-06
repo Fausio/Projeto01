@@ -6,7 +6,7 @@ using System.Data.Entity;
 using Modelo.Cadastros;
 using Modelo.Tabelas;
 
-namespace Projeto01.Context
+namespace Persistencia.Contexts
 {
     public class EFContext : DbContext
     {
