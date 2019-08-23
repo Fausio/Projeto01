@@ -246,6 +246,8 @@
     <Content Include="Areas\Seguranca\Views\Admin\Delete.cshtml" />
     <Content Include="Areas\Seguranca\Views\Admin\Details.cshtml" />
     <Content Include="Areas\Seguranca\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Seguranca\Views\PapelAdmin\Index.cshtml" />
+    <Content Include="Areas\Seguranca\Views\PapelAdmin\Create.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -337,7 +339,9 @@
     <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AccountController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Seguranca\Controllers\PapelAdminController.cs" />
     <Compile Include="Areas\Seguranca\Data\LoginViewModel.cs" />
+    <Compile Include="Areas\Seguranca\Data\Papel.cs" />
     <Compile Include="Areas\Seguranca\Data\Usuario.cs" />
     <Compile Include="Areas\Seguranca\Data\UsuarioViewModel.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
@@ -349,7 +353,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IdentityConfig.cs" />
+    <Compile Include="Infraestrutura\GerenciadorPapel.cs" />
     <Compile Include="Infraestrutura\GerenciadorUsuario.cs" />
+    <Compile Include="Infraestrutura\IdentityHelpers.cs" />
     <Compile Include="Migrations\201912032247293_FirstMigration.cs" />
     <Compile Include="Migrations\201912032247293_FirstMigration.Designer.cs">
       <DependentUpon>201912032247293_FirstMigration.cs</DependentUpon>

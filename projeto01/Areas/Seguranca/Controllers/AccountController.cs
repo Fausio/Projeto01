@@ -5,8 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security; 
-using System.Security.Claims; 
+using Microsoft.Owin.Security;
+using System.Security.Claims;
 using projeto01.Areas.Seguranca.Data;
 using projeto01.Infraestrutura;
 
@@ -39,8 +39,14 @@ namespace projeto01.Areas.Seguranca.Controllers
                     AuthManager.SignOut();
                     AuthManager.SignIn(new AuthenticationProperties { IsPersistent = false }, ident);
                     if (returnUrl == null)
+                    {
                         returnUrl = "/Home";
-                    return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        return Redirect(returnUrl);
+                    }
+                   
                 }
 
             }
