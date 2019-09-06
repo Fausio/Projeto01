@@ -36,16 +36,7 @@ namespace projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Produto produto)
         {
-            if (ModelState.IsValid)
-            {
-                context.Produtos.Add(produto);
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View(produto);
-            }
+            return GravarProduto(produto);
         }
 
         public ActionResult Edit(long id)
@@ -58,9 +49,7 @@ namespace projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Produto produto)
         {
-            context.Produtos.Add(produto);
-            context.SaveChanges();
-            return RedirectToAction("index");
+            return GravarProduto(produto);
         }
 
 
@@ -80,9 +69,7 @@ namespace projeto01.Controllers
         {
             try
             {
-                Produto produto = context.Produtos.Find(id);
-                context.Produtos.Remove(produto);
-                context.SaveChanges();
+                Produto produto = produtoServico.EliminarProdutoPorId(id);
                 TempData["Message"] = "Produto " + produto.Nome.ToUpper() + " foi removido";
                 return RedirectToAction("Index");
             }
@@ -113,10 +100,10 @@ namespace projeto01.Controllers
 
 
 
-                //Veja que, na assinatura do método, o parâmetro produto é
-                //opcional.E quando ele não existir, é atribuído null a ele.Isso foi
-                //adotado para podermos diferenciar quando o quarto parâmetro do
-                //SelectList() será informado.
+        //Veja que, na assinatura do método, o parâmetro produto é
+        //opcional.E quando ele não existir, é atribuído null a ele.Isso foi
+        //adotado para podermos diferenciar quando o quarto parâmetro do
+        //SelectList() será informado.
         private void PopularViewBag(Produto produto = null)
         {
             if (produto == null)
@@ -145,7 +132,7 @@ namespace projeto01.Controllers
             }
             catch
             {
-                return View(produto); 
+                return View(produto);
             }
         }
     }
