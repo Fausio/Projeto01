@@ -28,8 +28,7 @@ namespace projeto01.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.CategoriaId = new SelectList(context.categorias.OrderBy(b => b.Nome), "CategoriaId", "Nome");
-            ViewBag.FabricanteId = new SelectList(context.fabricantes.OrderBy(b => b.Nome), "FabricanteId", "Nome");
+            PopularViewBag();
             return View();
         }
 
@@ -51,10 +50,8 @@ namespace projeto01.Controllers
 
         public ActionResult Edit(long id)
         {
-            var Produto_ = context.Produtos.Find(id);
-            ViewBag.CategoriaId = new SelectList(context.categorias.OrderBy(b => b.Nome), "CategoriaId", "Nome", Produto_.CategoriaId);
-            ViewBag.FabricanteId = new SelectList(context.fabricantes.OrderBy(b => b.Nome), "FabricanteId", "Nome", Produto_.FabricanteId);
-            return View(Produto_);
+            PopularViewBag(produtoServico.ObterProdutoPorId(long) id);
+            return ObterVisaoProdutoPorId(id);
         }
 
         [HttpPost]
@@ -131,6 +128,24 @@ namespace projeto01.Controllers
             {
                 ViewBag.CategoriaId = new SelectList(categoriaServico.ObterCategoriasClassificadasPorNome(), "CategoriaId", "Nome", produto.CategoriaId);
                 ViewBag.FabricanteId = new SelectList(fabricanteServico.ObterFabricantesClassificadosPorNome(), "FabricanteId", "Nome", produto.FabricanteId);
+            }
+        }
+
+
+        private ActionResult GravarProduto(Produto produto)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    produtoServico.GravarProduto(produto);
+                    return RedirectToAction("Index");
+                }
+                return View(produto);
+            }
+            catch
+            {
+                return View(produto); 
             }
         }
     }
