@@ -1,6 +1,8 @@
 ﻿using Modelo.Cadastros;
 using Persistencia.DAL.Cadastros;
 using System.Linq;
+
+
 namespace Servicos.Cadastros
 {
     public class FabricanteServico
