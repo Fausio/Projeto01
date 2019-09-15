@@ -1,4 +1,4 @@
-﻿ 
+﻿@using projeto01.Infraestrutura
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,19 +17,18 @@
                     </h1>
                 </div>
 
-                <div style="text-align : right;">
-                    @{
-                        if (Html.GetAuthenticatedUser().ToString() != "")
-                        {
-                            @Html.GetAuthenticatedUser();
-                            @Html.ActionLink(" - Sair", "Logout", "Account");
-                        }
-                        else
-                        {
-                            @Html.ActionLink("Acessar", "Login", "Account",
-                            new { area = "Seguranca" }, null);
-                        }
+                <div>
+
+                    @if (Html.GetAuthenticatedUser().ToString() != "")
+                    {
+                        @Html.GetAuthenticatedUser();
+                        @Html.ActionLink(" - Sair", "Logout", "Account");
                     }
+                    else
+                    {
+                        @Html.ActionLink("Acessar", "Login", "Account", new { area = "Seguranca" }, null);
+                    }
+
                 </div>
             </div>
 

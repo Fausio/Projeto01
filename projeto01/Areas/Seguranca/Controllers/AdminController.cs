@@ -31,6 +31,7 @@ namespace projeto01.Areas.Seguranca.Controllers
         }
 
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -71,7 +72,7 @@ namespace projeto01.Areas.Seguranca.Controllers
             }
         }
 
-
+        [Authorize]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -116,6 +117,7 @@ namespace projeto01.Areas.Seguranca.Controllers
             return View(uvm);
         }
 
+        [Authorize]
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -156,6 +158,7 @@ namespace projeto01.Areas.Seguranca.Controllers
         }
 
 
+        [Authorize]
         public ActionResult Details(string id)
         {
             if (id == null)

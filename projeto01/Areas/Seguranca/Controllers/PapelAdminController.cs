@@ -14,6 +14,7 @@ namespace projeto01.Areas.Seguranca.Controllers
     public class PapelAdminController : Controller
     {
         // GET: Seguranca/PapelAdmin
+        [Authorize]
         public ActionResult Index()
         {
             return View(RoleManager.Roles);
@@ -28,6 +29,7 @@ namespace projeto01.Areas.Seguranca.Controllers
             }
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
