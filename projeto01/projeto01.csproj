@@ -360,6 +360,10 @@
     <Compile Include="Infraestrutura\GerenciadorPapel.cs" />
     <Compile Include="Infraestrutura\GerenciadorUsuario.cs" />
     <Compile Include="Infraestrutura\IdentityHelpers.cs" />
+    <Compile Include="Migrations\201909151734461_add_pic_filds_to_produto_model.cs" />
+    <Compile Include="Migrations\201909151734461_add_pic_filds_to_produto_model.Designer.cs">
+      <DependentUpon>201909151734461_add_pic_filds_to_produto_model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201912032247293_FirstMigration.cs" />
     <Compile Include="Migrations\201912032247293_FirstMigration.Designer.cs">
       <DependentUpon>201912032247293_FirstMigration.cs</DependentUpon>
@@ -403,6 +407,9 @@
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201909151734461_add_pic_filds_to_produto_model.resx">
+      <DependentUpon>201909151734461_add_pic_filds_to_produto_model.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912032247293_FirstMigration.resx">
       <DependentUpon>201912032247293_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
