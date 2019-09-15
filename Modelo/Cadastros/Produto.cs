@@ -32,5 +32,9 @@ namespace Modelo.Cadastros
 
         public Categoria Categoria { get; set; }
         public Fabricante Fabricante { get; set; }
+
+        public string LogotipoMimeType { get; set; } // representa o nome do tipo do arquivo armazenado
+        public byte[] Logotipo { get; set; } //representação binária do arquivo enviado
+
     }
 }
