@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -34,10 +33,10 @@ namespace Projeto01.Areas.Cadastros.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Produto produto)
+        public ActionResult Create(Produto produto, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
         {
 
-            return GravarProduto(produto);
+            return GravarProduto(produto, logotipo, chkRemoverImagem);
         }
 
         public ActionResult Edit(long id)
@@ -48,9 +47,9 @@ namespace Projeto01.Areas.Cadastros.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Produto produto)
+        public ActionResult Edit(Produto produto, HttpPostedFileBase logotipo = null, string chkRemoverImagem = null)
         {
-            return GravarProduto(produto);
+            return GravarProduto(produto, logotipo, chkRemoverImagem);
         }
 
 
@@ -101,6 +100,9 @@ namespace Projeto01.Areas.Cadastros.Controllers
 
 
 
+
+
+
         //Veja que, na assinatura do método, o parâmetro produto é
         //opcional.E quando ele não existir, é atribuído null a ele.Isso foi
         //adotado para podermos diferenciar quando o quarto parâmetro do
@@ -120,14 +122,25 @@ namespace Projeto01.Areas.Cadastros.Controllers
         }
 
 
-        private ActionResult GravarProduto(Produto produto)
+        private ActionResult GravarProduto(Produto produto, HttpPostedFileBase logotipo, string chkRemoverImagem)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
+
+                    if (chkRemoverImagem != null)
+                    {
+                        produto.Logotipo = null;
+                    }
+                    if (logotipo != null)
+                    {
+                        produto.LogotipoMimeType = logotipo.ContentType;
+                        produto.Logotipo = SetLogotipo(logotipo);
+                    }
                     produtoServico.GravarProduto(produto);
                     return RedirectToAction("Index");
+
                 }
                 PopularViewBag(produto);
                 return View(produto);
@@ -137,6 +150,34 @@ namespace Projeto01.Areas.Cadastros.Controllers
                 PopularViewBag(produto);
                 return View(produto);
             }
+        }
+
+
+        //É ele que fará a leitura do arquivo recebido e
+        //transformará este arquivo em valores binários para serem
+        //armazenados na propriedade e, consequentemente, no campo que
+        //será criado na tabela.
+
+        //um array de byte é criado, tendo como tamanho
+        //o tamanho da imagem recebida.Depois, uma leitura é realizada e
+        //seu resultado armazenado na variável bytesLogotipo , a qual é
+        //retornada pelo método.
+        private byte[] SetLogotipo(HttpPostedFileBase logotipo)
+        {
+            var bytesLogotipo = new byte[logotipo.ContentLength];
+            logotipo.InputStream.Read(bytesLogotipo, 0, logotipo.ContentLength);
+            return bytesLogotipo;
+        }
+
+        //retornará a imagem para exibição na visão.
+        public FileContentResult GetLogotipo(long id)
+        {
+            Produto produto = produtoServico.ObterProdutoPorId(id);
+            if (produto != null)
+            {
+                return File(produto.Logotipo, produto.LogotipoMimeType);
+            }
+            return null;
         }
     }
 }
