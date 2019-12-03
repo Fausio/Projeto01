@@ -130,6 +130,7 @@
     <Content Include="Views\Fabrincates\Details.cshtml" />
     <Content Include="Views\Fabrincates\Delete.cshtml" />
     <Content Include="Views\Categorias\Create.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
