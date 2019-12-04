@@ -107,10 +107,13 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(Fabricante fabricante)
         {
+            var fabricante_ = context.fabricantes.Find(fabricante.FabricanteID);
 
-
-            context.fabricantes.Remove(context.fabricantes.Find(fabricante.FabricanteID));
+            context.fabricantes.Remove(fabricante_);
             context.SaveChanges();
+
+            // mensagem para levar a view dele apos ser deletado um  fabricante da base de dados 
+            TempData["Message"] = "Fabricante " + fabricante_.Nome.ToUpper() + " foi removido com sucesso.";
             return RedirectToAction("Index");
 
         }

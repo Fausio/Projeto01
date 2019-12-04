@@ -54,9 +54,11 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(Categoria categoria)
         {
-
-            context.categorias.Remove(context.categorias.Where(x => x.CategoriaId == categoria.CategoriaId).First());
+            var categoria_ = context.categorias.Where(x => x.CategoriaId == categoria.CategoriaId).First();
+            context.categorias.Remove(categoria_);
             context.SaveChanges();
+
+            TempData["Message"] = "Categoria " + categoria_.Nome + " removida com sucesso";
             return RedirectToAction("Index");
 
         }
