@@ -296,9 +296,14 @@
     <Compile Include="Migrations\201912032247293_FirstMigration.Designer.cs">
       <DependentUpon>201912032247293_FirstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912040521452_add_produto_model.cs" />
+    <Compile Include="Migrations\201912040521452_add_produto_model.Designer.cs">
+      <DependentUpon>201912040521452_add_produto_model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Fabricante.cs" />
+    <Compile Include="Models\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +324,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912032247293_FirstMigration.resx">
       <DependentUpon>201912032247293_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912040521452_add_produto_model.resx">
+      <DependentUpon>201912040521452_add_produto_model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

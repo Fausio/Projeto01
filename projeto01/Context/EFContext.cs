@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using Projeto01.Models;
+using projeto01.Models;
 
 namespace Projeto01.Context
 {
@@ -11,5 +12,7 @@ namespace Projeto01.Context
     {
         public DbSet<Fabricante> fabricantes { get; set; }
         public DbSet<Categoria> categorias { get; set; }
+
+        public DbSet<Produto> Produtos { get; set; }
     }
 }
