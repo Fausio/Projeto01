@@ -42,17 +42,18 @@ namespace Projeto01.Controllers
 
         }
 
-        public ActionResult Edit(long? Id)
+        public ActionResult Edit(long? id)
         {
-            if (Id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            if (context.fabricantes.Find(Id) == null)
+            var fabricante = context.fabricantes.Where(f => f.FabricanteID == id).Include("Produtos.Categoria").First();
+            if (fabricante == null)
             {
                 return HttpNotFound();
             }
-            return View(context.fabricantes.Find(Id));
+            return View(fabricante);
         }
 
         [HttpPost]
@@ -96,12 +97,14 @@ namespace Projeto01.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
             }
-            if (context.fabricantes.Find(id) == null)
+
+            var fabricante = context.fabricantes.Where(f => f.FabricanteID == id).Include("Produtos.Categoria").First();
+            if (fabricante == null)
             {
                 return HttpNotFound();
             }
 
-            return View(context.fabricantes.Find(id));
+            return View(fabricante);
         }
 
         [HttpPost]

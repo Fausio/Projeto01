@@ -21,7 +21,7 @@ namespace Projeto01.Controllers
 
         public ActionResult Edit(long id)
         {
-            return View(context.categorias.Where(x => x.CategoriaId == id).First());
+            return View(context.categorias.Where(x => x.CategoriaId == id).Include("Produtos.Fabricante").First());
         }
 
         [HttpPost]
@@ -44,12 +44,11 @@ namespace Projeto01.Controllers
         public ActionResult Details(long id)
         {                                                                          /* aqui no include escrevemos o nome do produto do context nao do modelo*/
             return View(context.categorias.Where(x => x.CategoriaId == id).Include("Produtos.Fabricante").First());
-
         }
 
         public ActionResult Delete(long id)
         {
-            return View(context.categorias.Where(x => x.CategoriaId == id).First());
+            return View(context.categorias.Where(x => x.CategoriaId == id).Include("Produtos.Fabricante").First());
         }
 
         [HttpPost]
