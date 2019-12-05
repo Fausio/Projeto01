@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using projeto01.Models;
 using System.Data.Entity;
+using System.Net;
 
 namespace projeto01.Controllers
 {
@@ -62,13 +63,21 @@ namespace projeto01.Controllers
 
         public ActionResult Details(long id)
         {
-            Produto produto = context.Produtos.Where(p => p.ProdutoId ==id).Include(c => c.Categoria).Include(f => f.Fabricante).First();
+            Produto produto = context.Produtos.Where(p => p.ProdutoId == id).Include(c => c.Categoria).Include(f => f.Fabricante).First();
             return View(produto);
         }
 
-        public ActionResult Delete(long id)
+        public ActionResult Delete(long? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
             Produto produto = context.Produtos.Where(p => p.ProdutoId == id).Include(c => c.Categoria).Include(f => f.Fabricante).First();
+            if (produto == null)
+            {
+                return HttpNotFound();
+            }
             return View(produto);
         }
     }
