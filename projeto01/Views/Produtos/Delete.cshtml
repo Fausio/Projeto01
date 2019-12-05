@@ -38,12 +38,16 @@
         </div>
     </div>
     <div class="panel-footer panel-info">
-        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#deleteConfirmationModal">Remover</a>
+        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#deleteConfirmationModal">Remover</a> @** aqui está o botao que chama o modal *@
         @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
     </div>
 </div>
-<div class="modal fade" id="deleteConfirmationModal" tabindex="-1"
-     role="dialog" aria-hidden="true">
+
+
+
+
+
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -64,12 +68,15 @@
                     </strong>
                 </p>
                 @using (Html.BeginForm("Delete", "Produtos", FormMethod.Post, new { @id = "delete-form", role = "form" }))
-                {@Html.HiddenFor(m => m.ProdutoId)
-                @Html.AntiForgeryToken()
-            }
+
+                {
+                    @Html.HiddenFor(m => m.ProdutoId)
+                    @Html.AntiForgeryToken()
+                }
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" onclick="$('#delete-form').submit();">
+                <button type="button" class="btn btn-danger" onclick="$('#delete-form').submit();">
                     Sim, exclua este produto.
                 </button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">

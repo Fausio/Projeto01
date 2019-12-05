@@ -27,6 +27,9 @@
     </div>
 </div>
 
+ Aqui está o codigo que chama a partial view do fabricante
+@Html.Partial("~/Views/Produtos/_PorFabricante.cshtml", Model.Produtos.ToList()) .
+
 @section ScriptPage {
     <script type="text/javascript">
         $(document).ready(function () {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -77,13 +78,13 @@ namespace Projeto01.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            if (context.fabricantes.Find(id) == null)
+            var fabricante = context.fabricantes.Where(f => f.FabricanteID == id).Include("Produtos.Categoria").First();
+            if (fabricante == null)
             {
                 return HttpNotFound();
             }
 
-            return View(context.fabricantes.Find(id));
+            return View(fabricante);
 
         }
 
