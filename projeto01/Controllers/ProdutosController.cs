@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using projeto01.Models;
+using System.Data.Entity;
 
 namespace projeto01.Controllers
 {
@@ -43,7 +44,32 @@ namespace projeto01.Controllers
 
         public ActionResult Edit(long id)
         {
-            return View(context.Produtos.Include("Categoria").Include("Fabricante").Where(p => p.ProdutoId==id));
+            var Produto_ = context.Produtos.Find(id);
+            ViewBag.CategoriaId = new SelectList(context.categorias.OrderBy(b => b.Nome), "CategoriaId", "Nome", Produto_.CategoriaId);
+            ViewBag.FabricanteId = new SelectList(context.fabricantes.OrderBy(b => b.Nome), "FabricanteId", "Nome", Produto_.FabricanteId);
+            return View(Produto_);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Produto produto)
+        {
+            context.Produtos.Add(produto);
+            context.SaveChanges();
+            return RedirectToAction("index");
+        }
+
+
+        public ActionResult Details(long id)
+        {
+            Produto produto = context.Produtos.Where(p => p.ProdutoId ==id).Include(c => c.Categoria).Include(f => f.Fabricante).First();
+            return View(produto);
+        }
+
+        public ActionResult Delete(long id)
+        {
+            Produto produto = context.Produtos.Where(p => p.ProdutoId == id).Include(c => c.Categoria).Include(f => f.Fabricante).First();
+            return View(produto);
         }
     }
 }
