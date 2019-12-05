@@ -80,5 +80,24 @@ namespace projeto01.Controllers
             }
             return View(produto);
         }
+
+        // POST: Produtos/Delete/5
+        [HttpPost]
+        public ActionResult Delete(long id)
+        {
+            try
+            {
+
+                Produto produto = context.Produtos.Find(id);
+                context.Produtos.Remove(produto);
+                context.SaveChanges();
+                TempData["Message"] = "Produto " + produto.Nome.ToUpper() + " foi removido";
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
