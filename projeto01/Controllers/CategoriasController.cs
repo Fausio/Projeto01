@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -41,8 +42,9 @@ namespace Projeto01.Controllers
         }
 
         public ActionResult Details(long id)
-        {
-            return View(context.categorias.Where(x => x.CategoriaId == id).First());
+        {                                                                          /* aqui no include escrevemos o nome do produto do context nao do modelo*/
+            return View(context.categorias.Where(x => x.CategoriaId == id).Include("Produtos.Fabricante").First());
+
         }
 
         public ActionResult Delete(long id)
