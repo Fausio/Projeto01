@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Modelo.Cadastros;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Modelo.Tabelas;
 
-namespace projeto01.Models
+
+
+namespace Modelo.Cadastros
 {
     public class Produto
     {
@@ -13,7 +17,7 @@ namespace projeto01.Models
         public long? CategoriaId { get; set; }
         public long? FabricanteId { get; set; }
 
-        public Projeto01.Models.Categoria Categoria { get; set; }
-        public Projeto01.Models.Fabricante Fabricante { get; set; }
+        public Categoria Categoria { get; set; }
+        public Fabricante Fabricante { get; set; }
     }
 }

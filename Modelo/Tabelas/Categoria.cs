@@ -1,16 +1,15 @@
-﻿using projeto01.Models;
+﻿using Modelo.Cadastros;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Projeto01.Models
+namespace Modelo.Tabelas
 {
-    public class Fabricante
+    public class Categoria
     {
-        public long FabricanteID { get; set; }
+        public long CategoriaId { get; set; }
         public string Nome { get; set; }
-
 
         public virtual ICollection<Produto> Produtos { get; set; }
     }

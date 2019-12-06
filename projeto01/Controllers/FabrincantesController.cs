@@ -6,7 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Projeto01.Context;
-using Projeto01.Models;
+using Modelo.Cadastros;
 
 namespace Projeto01.Controllers
 {

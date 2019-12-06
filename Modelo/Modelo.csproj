@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastros\Fabricante.cs" />
+    <Compile Include="Cadastros\Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabelas\Categoria.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Cadastros\" />
-    <Folder Include="Tabelas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
