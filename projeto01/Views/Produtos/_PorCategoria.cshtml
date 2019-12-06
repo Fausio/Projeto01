@@ -1,4 +1,4 @@
-﻿@model IEnumerable<projeto01.Models.Produto>
+﻿@model IEnumerable<Modelo.Tabelas.Categoria>
 
 <div class="panel panel-primary">
     <div class="panel-heading">
@@ -21,20 +21,20 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ProdutoId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Categoria.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Fabricante.Nome)
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProdutoId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fabricante.Nome)
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<projeto01.Models.Produto>
+﻿@model IEnumerable<Modelo.Tabelas.Categoria>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -32,21 +32,21 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                <tr>
-                    <td> @Html.DisplayFor(modelItem => item.ProdutoId) </td>
-                    <td> @Html.DisplayFor(modelItem => item.Nome) </td>
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => item.ProdutoId) </td>
+                        <td> @Html.DisplayFor(modelItem => item.Nome) </td>
 
-                    <td> @Html.DisplayFor(modelItem => item.Categoria.Nome) </td>
-                    <td> @Html.DisplayFor(modelItem => item.Fabricante.Nome) </td>
+                        <td> @Html.DisplayFor(modelItem => item.Categoria.Nome) </td>
+                        <td> @Html.DisplayFor(modelItem => item.Fabricante.Nome) </td>
 
 
 
-                    <td>
-                        @Html.ActionLink("Alterar", "Edit", new { id = item.ProdutoId }) |
-                        @Html.ActionLink("Detalhes", "Details", new { id = item.ProdutoId }) |
-                        @Html.ActionLink("Eliminar", "Delete", new { id = item.ProdutoId })
-                    </td>
-                </tr>
+                        <td>
+                            @Html.ActionLink("Alterar", "Edit", new { id = item.ProdutoId }) |
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.ProdutoId }) |
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.ProdutoId })
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>

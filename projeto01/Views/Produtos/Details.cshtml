@@ -1,4 +1,4 @@
-﻿@model projeto01.Models.Produto
+﻿@model  Modelo.Tabelas.Categoria
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="panel-footer panel-info">
-        @Html.ActionLink("Alterar", "Edit", new { id = Model.ProdutoId }, new { @class = "btn btn-info" })        
+        @Html.ActionLink("Alterar", "Edit", new { id = Model.ProdutoId }, new { @class = "btn btn-info" })
         @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
     </div>
 </div>
