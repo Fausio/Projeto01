@@ -123,23 +123,28 @@ namespace Projeto01.Controllers
 
         }
 
-        public void GravarFabricante(Fabricante fabricante)
+        private ActionResult GravarFabricante(Fabricante fabricante)
         {
 
             try
             {
                 if (ModelState.IsValid)
                 {
-                    
+                    FabricanteServico.GravarFabricante(fabricante);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View(fabricante);
                 }
             }
             catch (Exception)
             {
 
-                throw;
+                return View(fabricante);
             }
-           
-        } 
+
+        }
 
     }
 

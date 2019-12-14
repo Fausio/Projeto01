@@ -18,7 +18,7 @@ namespace Servicos.Cadastros
 
         public void GravarFabricante(Fabricante fabricante)
         {
-            fabricanteDAL.
+            fabricanteDAL.GravarFabricantes(fabricante);
         }
     }
 }
