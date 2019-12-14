@@ -1,4 +1,4 @@
-﻿using Projeto01.Context;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,12 +18,12 @@ namespace projeto01.Controllers
         // GET: Produtos
 
         private ProdutoServico produtoServico = new ProdutoServico();
-        private FabricanteServico FabricanteServico = new FabricanteServico();
-        private CategoriaServico CategoriaServico = new CategoriaServico();
+        private FabricanteServico fabricanteServico = new FabricanteServico();
+        private CategoriaServico categoriaServico = new CategoriaServico();
 
         public ActionResult Index()
         {
-            return View(produtoServico.ObterProdutosClassificadosPorNome);
+            return View(produtoServico.ObterProdutosClassificadosPorNome());
         }
 
         public ActionResult Create()
@@ -41,7 +41,7 @@ namespace projeto01.Controllers
 
         public ActionResult Edit(long id)
         {
-            PopularViewBag(produtoServico.ObterProdutoPorId(long) id);
+            PopularViewBag(produtoServico.ObterProdutoPorId(id));
             return ObterVisaoProdutoPorId(id);
         }
 
@@ -88,7 +88,7 @@ namespace projeto01.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Produto produto = produtoServico.ObterProdutoPorId(long id);
+            Produto produto = produtoServico.ObterProdutoPorId((long)id);
 
             if (produto == null)
             {

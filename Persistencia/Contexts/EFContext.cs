@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using Modelo.Cadastros;
 using Modelo.Tabelas;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Persistencia.Contexts
 {
