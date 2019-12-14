@@ -30,17 +30,7 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Fabricante fabricante)
         {
-            if (ModelState.IsValid)
-            {
-                context.fabricantes.Add(fabricante);
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View(fabricante);
-            }
-
+            return GravarFabricante(fabricante);
         }
 
         public ActionResult Edit(long? id)
@@ -61,17 +51,7 @@ namespace Projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Fabricante fabricante)
         {
-            if (ModelState.IsValid)
-            {
-                context.Entry(fabricante).State = System.Data.Entity.EntityState.Modified;
-                context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View(fabricante);
-            }
-
+            return GravarFabricante(fabricante);
         }
 
         public ActionResult Details(long? id)
