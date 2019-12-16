@@ -82,6 +82,10 @@
     <Compile Include="DAL\Cadastros\FabricanteDAL.cs" />
     <Compile Include="DAL\Cadastros\ProdutoDAL.cs" />
     <Compile Include="DAL\Tabelas\CategoriaDAL.cs" />
+    <Compile Include="Migrations\201912241743531_add_pic_filds_to_produto_model.cs" />
+    <Compile Include="Migrations\201912241743531_add_pic_filds_to_produto_model.Designer.cs">
+      <DependentUpon>201912241743531_add_pic_filds_to_produto_model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201912140826354_InitialCreate.cs" />
     <Compile Include="Migrations\201912140826354_InitialCreate.Designer.cs">
       <DependentUpon>201912140826354_InitialCreate.cs</DependentUpon>
@@ -104,6 +108,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912241743531_add_pic_filds_to_produto_model.resx">
+      <DependentUpon>201912241743531_add_pic_filds_to_produto_model.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912140826354_InitialCreate.resx">
       <DependentUpon>201912140826354_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
