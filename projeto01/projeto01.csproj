@@ -207,6 +207,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Areas\Tabelas\Views\web.config" />
+    <Content Include="Areas\Cadastros\Views\web.config" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -293,6 +295,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Cadastros\CadastrosAreaRegistration.cs" />
+    <Compile Include="Areas\Tabelas\TabelasAreaRegistration.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\FabrincantesController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
@@ -332,6 +336,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Cadastros\Controllers\" />
+    <Folder Include="Areas\Cadastros\Data\" />
+    <Folder Include="Areas\Cadastros\Views\Shared\" />
+    <Folder Include="Areas\Tabelas\Controllers\" />
+    <Folder Include="Areas\Tabelas\Data\" />
+    <Folder Include="Areas\Tabelas\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\JqueryUI_1.12.1\" />
   </ItemGroup>
