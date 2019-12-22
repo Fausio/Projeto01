@@ -52,6 +52,15 @@
     <Compile Include="DAL\Cadastros\FabricanteDAL.cs" />
     <Compile Include="DAL\Cadastros\ProdutoDAL.cs" />
     <Compile Include="DAL\Tabelas\CategoriaDAL.cs" />
+    <Compile Include="Migrations\201912140826354_InitialCreate.cs" />
+    <Compile Include="Migrations\201912140826354_InitialCreate.Designer.cs">
+      <DependentUpon>201912140826354_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912221934586_DataAnotation.cs" />
+    <Compile Include="Migrations\201912221934586_DataAnotation.Designer.cs">
+      <DependentUpon>201912221934586_DataAnotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +73,13 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912140826354_InitialCreate.resx">
+      <DependentUpon>201912140826354_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912221934586_DataAnotation.resx">
+      <DependentUpon>201912221934586_DataAnotation.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
