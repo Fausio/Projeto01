@@ -36,6 +36,7 @@ namespace projeto01.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Produto produto)
         {
+
             return GravarProduto(produto);
         }
 
@@ -128,10 +129,12 @@ namespace projeto01.Controllers
                     produtoServico.GravarProduto(produto);
                     return RedirectToAction("Index");
                 }
+                PopularViewBag(produto);
                 return View(produto);
             }
             catch
             {
+                PopularViewBag(produto);
                 return View(produto);
             }
         }
