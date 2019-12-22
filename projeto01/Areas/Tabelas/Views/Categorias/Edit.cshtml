@@ -3,18 +3,20 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Registro de uma nova CATEGORIA";
+    ViewBag.Title =
+    "Alterando os dados de uma CATEGORIA";
 }
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Registro de uma nova CATEGORIA
+            Alterando os dados de uma CATEGORIA
         </div>
         <div class="panel-body">
             <div class="form-horizontal">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.CategoriaId)
                 <div class="form-group">
                     @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -23,23 +25,25 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="panel-footer panel-info">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Adicionar Fabricante" class="btn btn-danger" />
-                @Html.ActionLink("Retornar para a listagem de CATEGORIAS", "Index", null, new { @class = "btn btn-warning" })
+            <div class="panel-footer panel-info">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Gravar alterações" class="btn btn-info" />
+                    @Html.ActionLink("Retornar para a listagem de CATEGORIA", "Index", null, new { @class = "btn btn-warning" })
+                </div>
+
+                <br />
+                <br />
             </div>
-            <br />
-            <br />
         </div>
     </div>
 }
-@section ScriptPage {
-    <script src="~/Scripts/jquery.validate.min.js">
-    </script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.min.js">
-    </script>
 
+
+@Html.Partial("~/Areas/Cadastros/Views/Produtos/_PorCategoria.cshtml", Model.Produtos.ToList())
+
+@section ScriptPage {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -48,4 +52,3 @@
         });
     </script>
 }
-

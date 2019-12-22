@@ -1,22 +1,20 @@
-﻿@model Modelo.Tabelas.Categoria
-
-
+﻿@model Modelo.Cadastros.Fabricante
 @{
+
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title =
-    "Alterando os dados de uma CATEGORIA";
+    ViewBag.Title = "Alterando os dados de um FABRICANTE";
 }
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <div class="panel panel-primary">
         <div class="panel-heading">
-            Alterando os dados de uma CATEGORIA
+            Alteração dos dados de um FABRICANTE
         </div>
         <div class="panel-body">
             <div class="form-horizontal">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.HiddenFor(model => model.CategoriaId)
+                @Html.HiddenFor(model => model.FabricanteID)
                 <div class="form-group">
                     @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -28,7 +26,7 @@
             <div class="panel-footer panel-info">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Gravar alterações" class="btn btn-info" />
-                    @Html.ActionLink("Retornar para a listagem de CATEGORIA", "Index", null, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Retornar para a listagem de FABRICANTES", "Index", null, new { @class = "btn btn-warning" })
                 </div>
 
                 <br />
@@ -38,7 +36,7 @@
     </div>
 }
 
-@Html.Partial("~/Views/Produtos/_PorCategoria.cshtml", Model.Produtos.ToList())
+@Html.Partial("~/Areas/Cadastros/Views/Produtos/_PorFabricante.cshtml", Model.Produtos.ToList())
 
 @section ScriptPage {
     <script src="~/Scripts/jquery.validate.min.js"></script>
@@ -47,7 +45,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('li').removeClass("active");
-            $('#liCategorias').addClass("active");
+            $('#liFabricantes').addClass("active");
         });
     </script>
 }

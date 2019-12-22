@@ -282,15 +282,15 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\Categorias\Edit.cshtml" />
-    <Content Include="Views\Categorias\Details.cshtml" />
-    <Content Include="Views\Categorias\Delete.cshtml" />
-    <Content Include="Views\Fabrincates\Index.cshtml" />
-    <Content Include="Views\Fabrincates\Create.cshtml" />
-    <Content Include="Views\Fabrincates\Edit.cshtml" />
-    <Content Include="Views\Fabrincates\Details.cshtml" />
-    <Content Include="Views\Fabrincates\Delete.cshtml" />
-    <Content Include="Views\Categorias\Create.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categorias\Edit.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categorias\Details.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categorias\Delete.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Fabrincates\Index.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Fabrincates\Create.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Fabrincates\Edit.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Fabrincates\Details.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Fabrincates\Delete.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categorias\Create.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -300,9 +300,6 @@
     <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
     <Compile Include="Areas\Tabelas\Controllers\Controllers\CategoriasController.cs" />
     <Compile Include="Areas\Tabelas\TabelasAreaRegistration.cs" />
-    <Compile Include="Controllers\CategoriasController.cs" />
-    <Compile Include="Controllers\FabrincantesController.cs" />
-    <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -320,16 +317,16 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
-    <Content Include="Views\Categorias\Index.cshtml" />
+    <Content Include="Areas\Tabelas\Views\Categorias\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Views\Produtos\Create.cshtml" />
-    <Content Include="Views\Produtos\Index.cshtml" />
-    <Content Include="Views\Produtos\Edit.cshtml" />
-    <Content Include="Views\Produtos\Details.cshtml" />
-    <Content Include="Views\Produtos\Delete.cshtml" />
-    <Content Include="Views\Produtos\_PorFabricante.cshtml" />
-    <Content Include="Views\Produtos\_PorCategoria.cshtml" />
-    <Content Include="Views\Produtos\_PartialEditContentPanel.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Create.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Index.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Edit.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Details.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\Delete.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\_PorFabricante.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\_PorCategoria.cshtml" />
+    <Content Include="Areas\Cadastros\Views\Produtos\_PartialEditContentPanel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -343,6 +340,7 @@
     <Folder Include="Areas\Cadastros\Views\Shared\" />
     <Folder Include="Areas\Tabelas\Data\" />
     <Folder Include="Areas\Tabelas\Views\Shared\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\JqueryUI_1.12.1\" />
   </ItemGroup>

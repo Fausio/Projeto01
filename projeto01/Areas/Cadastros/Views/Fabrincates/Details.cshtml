@@ -1,14 +1,12 @@
-﻿@model Modelo.Tabelas.Categoria
-
-
+﻿@model Modelo.Cadastros.Fabricante
 @{
+
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title =
-    "Visualizando detalhes de uma CATEGORIA";
+    ViewBag.Title = "Visualizando detalhes de um FABRICANTE";
 }
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Visualizando detalhes de uma CATEGORIA
+        Visualizando detalhes de um FABRICANTE
     </div>
     <div class="panel-body">
         <div class="form-group">
@@ -23,19 +21,20 @@
         </div>
     </div>
     <div class="panel-footer panel-info">
-        @Html.ActionLink("Alterar", "Edit", new { id = Model.CategoriaId }, new { @class = "btn btn-info" })
-        @Html.ActionLink("Retornar para a listagem de CATEGORIA", "Index", null, new { @class = "btn btn-info" })
+        @Html.ActionLink("Alterar", "Edit", new { id = Model.FabricanteID }, new { @class = "btn btn-info" })
+        @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
     </div>
 </div>
 
-@Html.Partial("~/Views/Produtos/_PorCategoria.cshtml", Model.Produtos.ToList())
+@*Aqui está o codigo que chama a partial view do fabricante*@
 
+@Html.Partial("~/Areas/Cadastros/Views/Produtos/_PorFabricante.cshtml", Model.Produtos.ToList())
 
 @section ScriptPage {
     <script type="text/javascript">
         $(document).ready(function () {
             $('li').removeClass("active");
-            $('#liCategorias').addClass("active");
+            $('#liFabricantes').addClass("active");
         });
     </script>
 }

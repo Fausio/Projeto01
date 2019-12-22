@@ -1,10 +1,8 @@
-﻿@model Modelo.Tabelas.Categoria
-
+﻿@model Modelo.Cadastros.Fabricante
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title =
-    "Visualizando detalhes de uma CATEGORIA";
+    ViewBag.Title = "Visualizando detalhes de um FABRICANTE";
 }
 
 
@@ -12,7 +10,7 @@
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        Dados da categoria a ser removido
+        Dados do fabricante a ser removido
     </div>
     <div class="panel-body">
         <div class="form-group">
@@ -27,12 +25,12 @@
     </div>
     <div class="panel-footer panel-info">
         @*@using (Html.BeginForm())
-        {
-            @Html.HiddenFor(model => model.CategoriaId)
-            @Html.AntiForgeryToken()
-            <input type="submit" value="Remover FABRICANTE" class="btn btn-danger" />
-            @Html.ActionLink("Retornar para a listagem de CATEGORIA", "Index", null, new { @class = "btn btn-info" })
-        }*@
+            {
+                @Html.HiddenFor(model => model.FabricanteID)
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Remover FABRICANTE" class="btn btn-danger" />
+                @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
+            }*@
 
         <a href="#" class="btn btn-info" data-toggle="modal" data-target="#deleteConfirmationModal">Remover</a> @** aqui está o botao que chama o modal *@
         @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
@@ -49,45 +47,46 @@
                     &times;
                 </button>
                 <h4 class="modal-title">
-                    Confirmação de exclusão do  Categoria
+                    Confirmação de exclusão do  Fabricante
                 </h4>
             </div>
             <div class="modal-body">
                 <p>
-                    Você está prestes a remover a categoria @Model.Nome.ToUpper() do cadastro.
+                    Você está prestes a remover o fabricante @Model.Nome.ToUpper() do cadastro.
                 </p>
                 <p>
                     <strong>
                         Você está certo que deseja prosseguir?
                     </strong>
                 </p>
-                @using (Html.BeginForm("Delete", "Categorias", FormMethod.Post, new { @id = "delete-form", role = "form" }))
+                @using (Html.BeginForm("Delete", "Fabrincates", FormMethod.Post, new { @id = "delete-form", role = "form" }))
 
                 {
-                    @Html.HiddenFor(m => m.CategoriaId)
+                    @Html.HiddenFor(m => m.FabricanteID)
                     @Html.AntiForgeryToken()
                 }
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" onclick="$('#delete-form').submit();">
-                    Sim, exclua este categoria.
+                    Sim, exclua este fabricante.
                 </button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">
-                    Não, não exclua este categoria.
+                    Não, não exclua este fabricante.
                 </button>
             </div>
         </div>
     </div>
 </div>
 
-@Html.Partial("~/Views/Produtos/_PorCategoria.cshtml", Model.Produtos.ToList())
+
+@Html.Partial("~/Areas/Cadastros/Views/Produtos/_PorFabricante.cshtml", Model.Produtos.ToList()) 
 
 @section ScriptPage {
     <script type="text/javascript">
         $(document).ready(function () {
             $('li').removeClass("active");
-            $('#liCategorias').addClass("active");
+            $('#liFabricantes').addClass("active");
         });
     </script>
 }
