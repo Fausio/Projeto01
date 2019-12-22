@@ -17,7 +17,7 @@ namespace Persistencia.DAL.Cadastros
             return context.fabricantes.OrderBy(b => b.Nome);
         }
 
-        public void GravarFabricantes(Fabricante  fabricante)
+        public void GravarFabricantes(Fabricante fabricante)
         {
             if (fabricante.FabricanteID == null)
             {
@@ -28,6 +28,21 @@ namespace Persistencia.DAL.Cadastros
                 context.Entry(fabricante).State = EntityState.Modified;
             }
             context.SaveChanges();
+        }
+
+        public Fabricante ObterFabricanteID(long? id)
+        {
+            return context.fabricantes.Where(f => f.FabricanteID==id).Include("Produtos.Categoria").First();
+        }
+
+
+        public Fabricante deletarFabricante(Fabricante fabricante)
+        {
+            var f = context.fabricantes.Find(fabricante.FabricanteID);
+            context.fabricantes.Remove(f);
+            context.SaveChanges();
+
+            return f;
         }
     }
 }

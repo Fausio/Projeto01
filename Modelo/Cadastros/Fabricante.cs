@@ -8,7 +8,7 @@ namespace Modelo.Cadastros
 {
     public class Fabricante
     {
-        public long FabricanteID { get; set; }
+        public long? FabricanteID { get; set; }
         public string Nome { get; set; }
 
 
