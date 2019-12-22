@@ -26,13 +26,58 @@
         </div>
     </div>
     <div class="panel-footer panel-info">
-        @using (Html.BeginForm())
+        @*@using (Html.BeginForm())
         {
             @Html.HiddenFor(model => model.CategoriaId)
             @Html.AntiForgeryToken()
             <input type="submit" value="Remover FABRICANTE" class="btn btn-danger" />
             @Html.ActionLink("Retornar para a listagem de CATEGORIA", "Index", null, new { @class = "btn btn-info" })
-        }
+        }*@
+
+        <a href="#" class="btn btn-info" data-toggle="modal" data-target="#deleteConfirmationModal">Remover</a> @** aqui está o botao que chama o modal *@
+        @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    Confirmação de exclusão do  Categoria
+                </h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Você está prestes a remover a categoria @Model.Nome.ToUpper() do cadastro.
+                </p>
+                <p>
+                    <strong>
+                        Você está certo que deseja prosseguir?
+                    </strong>
+                </p>
+                @using (Html.BeginForm("Delete", "Categorias", FormMethod.Post, new { @id = "delete-form", role = "form" }))
+
+                {
+                    @Html.HiddenFor(m => m.CategoriaId)
+                    @Html.AntiForgeryToken()
+                }
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="$('#delete-form').submit();">
+                    Sim, exclua este categoria.
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Não, não exclua este categoria.
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 
