@@ -248,6 +248,7 @@
     <Content Include="Areas\Seguranca\Views\Account\Login.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Index.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Create.cshtml" />
+    <Content Include="Areas\Seguranca\Views\PapelAdmin\Edit.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -342,6 +343,9 @@
     <Compile Include="Areas\Seguranca\Controllers\PapelAdminController.cs" />
     <Compile Include="Areas\Seguranca\Data\LoginViewModel.cs" />
     <Compile Include="Areas\Seguranca\Data\Papel.cs" />
+    <Compile Include="Areas\Seguranca\Data\PapelEditModel.cs" />
+    <Compile Include="Areas\Seguranca\Data\PapelModificationModel.cs" />
+    <Compile Include="Areas\Seguranca\Data\SegurancaModelViews.cs" />
     <Compile Include="Areas\Seguranca\Data\Usuario.cs" />
     <Compile Include="Areas\Seguranca\Data\UsuarioViewModel.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
