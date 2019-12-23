@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
@@ -45,7 +46,7 @@ namespace projeto01.Areas.Seguranca.Controllers
                 };
 
                 IdentityResult result = GerenciadorUsuario.Create(user, model.Senha);
-                
+
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index");
@@ -66,6 +67,67 @@ namespace projeto01.Areas.Seguranca.Controllers
             {
                 ModelState.AddModelError("", error);
             }
+        }
+
+
+        public ActionResult Edit(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Usuario usuario = GerenciadorUsuario.FindById(id);
+
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+
+            var uvm = new UsuarioViewModel();
+            uvm.Id = usuario.Id;
+            uvm.Nome = usuario.UserName;
+            uvm.Email = usuario.Email;
+            return View(uvm);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(UsuarioViewModel uvm)
+        {
+            if (ModelState.IsValid)
+            {
+                Usuario usuario = GerenciadorUsuario.FindById(uvm.Id);
+                usuario.UserName = uvm.Nome;
+                usuario.Email = uvm.Email;
+                usuario.PasswordHash = GerenciadorUsuario.PasswordHasher.HashPassword(uvm.Senha);
+                IdentityResult result = GerenciadorUsuario.Update(usuario);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    AddErrorsFromResult(result);
+                }
+            }
+            return View(uvm);
+        }
+
+        public ActionResult Delete(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Usuario usuario = GerenciadorUsuario.FindById(id);
+
+            if (usuario == null)
+            {
+                return HttpNotFound();
+            }
+            return View(usuario);
         }
     }
 }
