@@ -71,6 +71,12 @@ namespace projeto01.Areas.Seguranca.Controllers
             }
         }
 
+        public ActionResult Logout()
+        {
+            AuthManager.SignOut();
+            return RedirectToAction("Index", "Home", new { area = "" });
+        }
+
     }
 
 }
