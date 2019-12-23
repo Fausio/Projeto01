@@ -331,6 +331,7 @@
     <Compile Include="Areas\Cadastros\Controllers\FabrincantesController.cs" />
     <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Seguranca\Data\SeguracaViewModelos.cs" />
     <Compile Include="Areas\Seguranca\Data\Usuario.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
     <Compile Include="Areas\Tabelas\Controllers\Controllers\CategoriasController.cs" />
