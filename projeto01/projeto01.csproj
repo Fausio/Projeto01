@@ -337,6 +337,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infraestrutura\GerenciadorUsuario.cs" />
     <Compile Include="Migrations\201912032247293_FirstMigration.cs" />
     <Compile Include="Migrations\201912032247293_FirstMigration.Designer.cs">
       <DependentUpon>201912032247293_FirstMigration.cs</DependentUpon>
