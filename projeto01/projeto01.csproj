@@ -240,6 +240,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Seguranca\Views\web.config" />
+    <Content Include="Areas\Seguranca\Views\Admin\Index.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -329,6 +330,7 @@
     <Compile Include="Areas\Cadastros\CadastrosAreaRegistration.cs" />
     <Compile Include="Areas\Cadastros\Controllers\FabrincantesController.cs" />
     <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
+    <Compile Include="Areas\Seguranca\Controllers\AdminController.cs" />
     <Compile Include="Areas\Seguranca\Data\Usuario.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
     <Compile Include="Areas\Tabelas\Controllers\Controllers\CategoriasController.cs" />
@@ -374,7 +376,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Cadastros\Data\" />
     <Folder Include="Areas\Cadastros\Views\Shared\" />
-    <Folder Include="Areas\Seguranca\Controllers\" />
     <Folder Include="Areas\Seguranca\Views\Shared\" />
     <Folder Include="Areas\Tabelas\Data\" />
     <Folder Include="Areas\Tabelas\Views\Shared\" />

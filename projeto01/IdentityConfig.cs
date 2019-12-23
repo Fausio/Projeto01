@@ -7,8 +7,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using projeto01.Infraestrutura;
-using Projeto01.DAL;
-using projeto01.Infraestrutura;
+using Projeto01.DAL; 
 
 namespace projeto01
 {
