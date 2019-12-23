@@ -245,6 +245,7 @@
     <Content Include="Areas\Seguranca\Views\Admin\Edit.cshtml" />
     <Content Include="Areas\Seguranca\Views\Admin\Delete.cshtml" />
     <Content Include="Areas\Seguranca\Views\Admin\Details.cshtml" />
+    <Content Include="Areas\Seguranca\Views\Account\Login.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -334,12 +335,15 @@
     <Compile Include="Areas\Cadastros\CadastrosAreaRegistration.cs" />
     <Compile Include="Areas\Cadastros\Controllers\FabrincantesController.cs" />
     <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
+    <Compile Include="Areas\Seguranca\Controllers\AccountController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Seguranca\Data\LoginViewModel.cs" />
     <Compile Include="Areas\Seguranca\Data\Usuario.cs" />
     <Compile Include="Areas\Seguranca\Data\UsuarioViewModel.cs" />
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
     <Compile Include="Areas\Tabelas\Controllers\Controllers\CategoriasController.cs" />
     <Compile Include="Areas\Tabelas\TabelasAreaRegistration.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\IdentityDbContextAplicacao.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -355,6 +359,7 @@
       <DependentUpon>201912040521452_add_produto_model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -384,9 +389,8 @@
     <Folder Include="Areas\Seguranca\Views\Shared\" />
     <Folder Include="Areas\Tabelas\Data\" />
     <Folder Include="Areas\Tabelas\Views\Shared\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\JqueryUI_1.12.1\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201912032247293_FirstMigration.resx">
