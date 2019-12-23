@@ -16,11 +16,13 @@ namespace Projeto01.Areas.Cadastros.Controllers
         FabricanteServico FabricanteServico = new FabricanteServico();
 
         // GET: Fabrincates
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(FabricanteServico.ObterFabricantesClassificadosPorNome());
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -33,6 +35,7 @@ namespace Projeto01.Areas.Cadastros.Controllers
             return GravarFabricante(fabricante);
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(long id)
         {
             return retornaproduto(id);
@@ -45,12 +48,14 @@ namespace Projeto01.Areas.Cadastros.Controllers
             return GravarFabricante(fabricante);
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(long  id)
         {
             return retornaproduto(id);
 
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(long? id)
         {
            return retornaproduto(id);
