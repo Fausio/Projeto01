@@ -37,7 +37,41 @@
                 @Html.EditorFor(model => model.Fabricante.Nome, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
             </div>
         </div>
+
+        <div class="col-md-offset-6 col-md-5">
+            <div class="form-group">
+                <input type="file" name="logotipo" id="logotipo" disabled="disabled" onchange='$("#upload-fileinfo").html($(this).val());' />
+                <span id="upload-file-info"></span>
+            </div>
+            <div class="form-group">
+                @if (Model.Logotipo == null)
+                {
+                    <div class="form-control-static">
+                        Nem uma imagem adicionada
+                    </div>
+                }
+                else
+                {
+                    <div class="panel-body">
+                        <img class="img-thumbnail" src="@Url.Action("GetLogotipo", "Produtos", new { id = Model.ProdutoId })" style="display:block; margin-left:auto;margin-right:auto;" />
+                    </div>
+                    <div class="panel-footer" hidden="hidden">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="chkRemoverImagem" value="Sim">Remover imagem
+                            </label>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
     </div>
+
+
+
+
+
     <div class="panel-footer panel-info">
         @Html.ActionLink("Alterar", "Edit", new { id = Model.ProdutoId }, new { @class = "btn btn-info" })
         @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })

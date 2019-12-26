@@ -90,6 +90,14 @@
     <Compile Include="Migrations\201912221934586_DataAnotation.Designer.cs">
       <DependentUpon>201912221934586_DataAnotation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912251851075_picupload_fild.cs" />
+    <Compile Include="Migrations\201912251851075_picupload_fild.Designer.cs">
+      <DependentUpon>201912251851075_picupload_fild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912251854566_picdowload_fild.cs" />
+    <Compile Include="Migrations\201912251854566_picdowload_fild.Designer.cs">
+      <DependentUpon>201912251854566_picdowload_fild.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912221934586_DataAnotation.resx">
       <DependentUpon>201912221934586_DataAnotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912251851075_picupload_fild.resx">
+      <DependentUpon>201912251851075_picupload_fild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912251854566_picdowload_fild.resx">
+      <DependentUpon>201912251854566_picdowload_fild.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

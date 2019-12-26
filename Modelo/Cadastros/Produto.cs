@@ -36,5 +36,8 @@ namespace Modelo.Cadastros
         public string LogotipoMimeType { get; set; } // representa o nome do tipo do arquivo armazenado
         public byte[] Logotipo { get; set; } //representação binária do arquivo enviado
 
+        public string NomeArquivo { get; set; }
+        public long TamanhoArquivo { get; set; }
+
     }
 }
