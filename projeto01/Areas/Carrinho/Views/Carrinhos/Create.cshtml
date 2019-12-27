@@ -48,3 +48,36 @@
         </div>
     </div>
 }
+
+@section styles{
+    <link href="~/Scripts/JqueryUI_1.12.1/jquery-ui.css"
+          rel="stylesheet" />
+}
+@section ScriptPage {
+    <script src="~/Scripts/JqueryUI_1.12.1/jquery-ui.js">
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function (response, status, xhr) {
+            $('.autocomplete-with-update-field').autocomplete(
+            {
+                minLength: 5,
+
+                source: function (request, response) {
+                    var url = $(this.element).data('url');
+                    $.getJSON(url, { param: request.term },
+                        function(data) { response(data);
+                    });
+                },
+
+                select: function (event, ui)
+                {
+                    var updatefield = '#' + $("#" + event.target.id).data('updatefield');
+                    $(updatefield).val(ui.item.id);
+                    setTimeout(function () {
+                        $(updatefield).focus();
+                    }, 200);
+                }
+            });
+    </script>
+}

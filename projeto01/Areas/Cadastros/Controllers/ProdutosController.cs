@@ -176,5 +176,11 @@ namespace Projeto01.Areas.Cadastros.Controllers
                 return View(produto);
             }
         }
+
+        public JsonResult GetProdutosPorNome(string param)
+        {
+            var r = produtoServico.ObterProdutosPorNome(param);
+            return Json(r, JsonRequestBehavior.AllowGet);
+        }
     }
 }
