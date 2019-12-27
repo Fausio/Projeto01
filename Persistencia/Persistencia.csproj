@@ -98,6 +98,10 @@
     <Compile Include="Migrations\201912251854566_picdowload_fild.Designer.cs">
       <DependentUpon>201912251854566_picdowload_fild.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912271554070_add_ValorUnitario_in_produto_model.cs" />
+    <Compile Include="Migrations\201912271554070_add_ValorUnitario_in_produto_model.Designer.cs">
+      <DependentUpon>201912271554070_add_ValorUnitario_in_produto_model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912251854566_picdowload_fild.resx">
       <DependentUpon>201912251854566_picdowload_fild.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912271554070_add_ValorUnitario_in_produto_model.resx">
+      <DependentUpon>201912271554070_add_ValorUnitario_in_produto_model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

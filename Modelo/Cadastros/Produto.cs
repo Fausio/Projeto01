@@ -39,5 +39,7 @@ namespace Modelo.Cadastros
         public string NomeArquivo { get; set; }
         public long TamanhoArquivo { get; set; }
 
+        public double ValorUnitario { get; set; }
+
     }
 }
