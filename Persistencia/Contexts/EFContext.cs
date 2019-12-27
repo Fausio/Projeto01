@@ -6,6 +6,7 @@ using System.Data.Entity;
 using Modelo.Cadastros;
 using Modelo.Tabelas;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Modelo.Carrinho;
 
 namespace Persistencia.Contexts
 {
@@ -14,6 +15,7 @@ namespace Persistencia.Contexts
         public DbSet<Fabricante> fabricantes { get; set; }
         public DbSet<Categoria> categorias { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+                       public DbSet<ItemCarrinho> ItensCarrinhos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
