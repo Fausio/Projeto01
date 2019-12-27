@@ -15,7 +15,7 @@ namespace Persistencia.DAL.Cadastros
 
 
         public Produto ObterProdutoPorId(long id)
-        {
+        { 
             return context.Produtos.Where(p => p.ProdutoId == id).Include(c => c.Categoria).Include(f => f.Fabricante).First();
         }
 

@@ -128,6 +128,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
@@ -250,6 +251,8 @@
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Create.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Edit.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="pic\banner.png" />
+    <Content Include="pic\bg.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
@@ -351,6 +354,7 @@
     <Compile Include="Areas\Seguranca\SegurancaAreaRegistration.cs" />
     <Compile Include="Areas\Tabelas\Controllers\Controllers\CategoriasController.cs" />
     <Compile Include="Areas\Tabelas\TabelasAreaRegistration.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\IdentityDbContextAplicacao.cs" />
     <Compile Include="Global.asax.cs">
@@ -385,6 +389,9 @@
     <Content Include="Areas\Cadastros\Views\Produtos\_PorFabricante.cshtml" />
     <Content Include="Areas\Cadastros\Views\Produtos\_PorCategoria.cshtml" />
     <Content Include="Areas\Cadastros\Views\Produtos\_PartialEditContentPanel.cshtml" />
+    <Content Include="Views\Errors\General.cshtml" />
+    <Content Include="Views\Errors\Http400.cshtml" />
+    <Content Include="Views\Errors\Http404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
