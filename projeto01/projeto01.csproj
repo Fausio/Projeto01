@@ -251,6 +251,8 @@
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Create.cshtml" />
     <Content Include="Areas\Seguranca\Views\PapelAdmin\Edit.cshtml" />
     <Content Include="Areas\Carrinho\Views\web.config" />
+    <Content Include="Areas\Carrinho\Views\Carrinhos\Create.cshtml" />
+    <Content Include="Areas\Carrinho\Views\Carrinhos\_ItensCarrinho.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="pic\banner.png" />
     <Content Include="pic\bg.png" />
@@ -407,7 +409,6 @@
     <Folder Include="Areas\Cadastros\Data\" />
     <Folder Include="Areas\Cadastros\Views\Shared\" />
     <Folder Include="Areas\Carrinho\Data\" />
-    <Folder Include="Areas\Carrinho\Views\Carrinhos\" />
     <Folder Include="Areas\Carrinho\Views\Shared\" />
     <Folder Include="Areas\Seguranca\Views\Shared\" />
     <Folder Include="Areas\Tabelas\Data\" />
