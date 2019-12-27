@@ -343,6 +343,7 @@
     <Compile Include="Areas\Cadastros\Controllers\FabrincantesController.cs" />
     <Compile Include="Areas\Cadastros\Controllers\ProdutosController.cs" />
     <Compile Include="Areas\Carrinho\CarrinhoAreaRegistration.cs" />
+    <Compile Include="Areas\Carrinho\Controllers\CarrinhosController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AccountController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\AdminController.cs" />
     <Compile Include="Areas\Seguranca\Controllers\PapelAdminController.cs" />
@@ -405,8 +406,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Cadastros\Data\" />
     <Folder Include="Areas\Cadastros\Views\Shared\" />
-    <Folder Include="Areas\Carrinho\Controllers\" />
     <Folder Include="Areas\Carrinho\Data\" />
+    <Folder Include="Areas\Carrinho\Views\Carrinhos\" />
     <Folder Include="Areas\Carrinho\Views\Shared\" />
     <Folder Include="Areas\Seguranca\Views\Shared\" />
     <Folder Include="Areas\Tabelas\Data\" />
