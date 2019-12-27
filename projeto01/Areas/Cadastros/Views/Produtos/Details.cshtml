@@ -55,12 +55,13 @@
                     <div class="panel-body">
                         <img class="img-thumbnail" src="@Url.Action("GetLogotipo", "Produtos", new { id = Model.ProdutoId })" style="display:block; margin-left:auto;margin-right:auto;" />
                     </div>
-                    <div class="panel-footer" hidden="hidden">
+                    <div class="panel-footer" >
                         <div class="checkbox">
-                            <label>
+                            <label  hidden="hidden">
                                 <input type="checkbox" name="chkRemoverImagem" value="Sim">Remover imagem
                             </label>
                         </div>
+                        @Html.ActionLink("Baixar o arquivo : " + Model.NomeArquivo, "DownloadArquivo", "Produtos", new { area = "Cadastros", id = Model.ProdutoId }, null)
                     </div>
                 }
             </div>
@@ -73,7 +74,7 @@
 
 
     <div class="panel-footer panel-info">
-        @Html.ActionLink("Alterar", "Edit", new { id = Model.ProdutoId }, new { @class = "btn btn-info" })
+        @Html.ActionLink("Alterar", "Edit", new { id = Model.ProdutoId }, new { @class = "btn btn-success" })
         @Html.ActionLink("Retornar para a listagem", "Index", null, new { @class = "btn btn-info" })
     </div>
 </div>
