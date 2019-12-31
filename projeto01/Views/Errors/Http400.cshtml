@@ -14,9 +14,7 @@
             @*@HttpContext.Current.Session["ErrorException"].ToString().Substring(0, 400)*@
         </p>
         <p>
-            <a href='@Url.Action("Index", "Home")'>
-                Retornar ao início
-            </a>
+            @Html.ActionLink("Produtos ir para a lista de produtos", "Index", "Produtos", new { Area = "Cadastros" }, new { })
             <br>
         </p>
     </div>
