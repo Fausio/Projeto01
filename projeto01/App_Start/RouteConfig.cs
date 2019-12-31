@@ -13,10 +13,12 @@ namespace projeto01
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+        
+
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Produtos", action = "Index", id = UrlParameter.Optional }
+                url: "{Area}/{controller}/{action}/{id}",
+                defaults: new { area = "Cadastros", controller = "Produtos", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
