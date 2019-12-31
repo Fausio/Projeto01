@@ -40,12 +40,14 @@
                 <ul class="nav nav-pills nav-stacked">
                     <li id="liHome" role="presentation" class="active"><hr /></li>
                     <li id="liHome" role="presentation" class="active"><a href="#">Home</a></li>
-                    <li id="liCategorias" role="presentation">@Html.ActionLink("Categorias", "Index", "Categorias")</li>
-                    <li id="liFabricantes" role="presentation">@Html.ActionLink("Fabricantes", "Index", "Fabrincates")</li>
-                    <li id="liProdutos" role="presentation">@Html.ActionLink("Produtos", "Index", "Produtos")</li>
+                    <li id="liCategorias" role="presentation"> @Html.ActionLink("Categorias", "Index", "Categorias", new { Area = "Tabelas" }, new { }) </li>
+                    <li id="liCategorias" role="presentation"> @Html.ActionLink("Fabricantes", "Index", "Fabrincates", new { Area = "Cadastros" }, new { }) </li>
+                    <li id="liProdutos" role="presentation">@Html.ActionLink("Produtos", "Index", "Produtos", new { Area = "Cadastros" }, new { }) </li>
 
-                    <li id="liUsuarios" role="presentation">@Html.ActionLink("Usuarios", "Index", "Admin")</li>
-                    <li id="liPapeisUsuarios" role="presentation">@Html.ActionLink("Papéis", "Index", "PapelAdmin")</li>
+                    <li id="liUsuarios" role="presentation">@Html.ActionLink("Usuarios", "Index", "Admin", new { Area = "Seguranca" }, new { }) </li>
+                    <li id="liPapeisUsuarios" role="presentation">@Html.ActionLink("Papéis", "Index", "PapelAdmin", new { Area = "Seguranca" }, new { }) </li>
+
+                    <li id="liCarrinho" role="presentation">@Html.ActionLink("Carrinho de compra", "Create", "Carrinhos", new { Area = "Carrinho" }, new { }) </li>
                 </ul>
             </div>
             <div class="col-xs-9 col-md-9">
